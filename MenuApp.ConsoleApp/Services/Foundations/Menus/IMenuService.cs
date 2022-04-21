@@ -2,9 +2,12 @@
 // Copyright (c) MumsWhoCode. All rights reserved.
 // ------------------------------------------------
 
-namespace MenuApp.ConsoleApp.Brokers.Storages
+using MenuApp.ConsoleApp.Models.Menus;
+
+namespace MenuApp.ConsoleApp.Services.Foundations.Menus
 {
-    public partial interface IStorageBroker
+    public interface IMenuService
     {
+        Menu AddMenu(Menu menu);
     }
 }

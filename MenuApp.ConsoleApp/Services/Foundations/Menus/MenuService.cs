@@ -14,9 +14,7 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         public MenuService(IStorageBroker storageBroker) =>
             this.storageBroker = storageBroker;
 
-        public Menu AddMenu(Menu menu)
-        {
-            throw new NotImplementedException();
-        }
+        public Menu AddMenu(Menu menu) =>
+           this.storageBroker.InsertMenu(menu);
     }
 }

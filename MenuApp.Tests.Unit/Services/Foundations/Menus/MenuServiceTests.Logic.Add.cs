@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Force.DeepCloner;
 using MenuApp.ConsoleApp.Models.Menus;
 using Moq;
 using Xunit;
@@ -14,7 +15,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
             Menu randomMenu = CreateRandomMenu();
             Menu inputMenu = randomMenu;
             Menu persistedMenu = inputMenu;
-            Menu expectedMenu = persistedMenu;
+            Menu expectedMenu = persistedMenu.DeepClone();
 
             this.storageBrokerMock.Setup(brokers =>
                 brokers.InsertMenu(inputMenu))

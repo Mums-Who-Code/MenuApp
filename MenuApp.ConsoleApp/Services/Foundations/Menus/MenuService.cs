@@ -8,7 +8,7 @@ using MenuApp.ConsoleApp.Models.Menus;
 
 namespace MenuApp.ConsoleApp.Services.Foundations.Menus
 {
-    public class MenuService : IMenuService
+    public partial class MenuService : IMenuService
     {
         private readonly IStorageBroker storageBroker;
         private readonly ILoggingBroker loggingBroker;
@@ -22,6 +22,11 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         }
 
         public Menu AddMenu(Menu menu) =>
-           this.storageBroker.InsertMenu(menu);
+        TryCatch(() =>
+        {
+            ValidateMenu(menu);
+
+            return this.storageBroker.InsertMenu(menu);
+        });
     }
 }

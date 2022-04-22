@@ -40,7 +40,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
         [InlineData(null)]
         [InlineData("")]
         [InlineData("   ")]
-        public async Task ShouldThrowValidationExceptionOnAddIfSampleIsInvalidAndLogIt(
+        public async Task ShouldThrowValidationExceptionOnAddIfMenuIsInvalidAndLogIt(
             string invalidText)
         {
             //given

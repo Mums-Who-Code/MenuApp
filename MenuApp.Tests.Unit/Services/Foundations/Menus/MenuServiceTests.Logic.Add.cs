@@ -19,7 +19,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
 
             this.storageBrokerMock.Setup(brokers =>
                 brokers.InsertMenu(inputMenu))
-                .Returns(expectedMenu);
+                    .Returns(expectedMenu);
 
             //when
             Menu actualMenu = this.menuService.AddMenu(inputMenu);
@@ -32,6 +32,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
                     Times.Once);
 
             this.storageBrokerMock.VerifyNoOtherCalls();
+            this.loggingBrokerMock.VerifyNoOtherCalls();
         }
     }
 }

@@ -29,7 +29,8 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
         {
             return actualException =>
                 actualException.Message == expectedException.Message
-                && actualException.InnerException.Message == expectedException.InnerException.Message;
+                && actualException.InnerException.Message == expectedException.InnerException.Message
+                && (actualException.InnerException as Xeption).DataEquals(expectedException.InnerException.Data);
         }
 
         private static Menu CreateRandomMenu() =>

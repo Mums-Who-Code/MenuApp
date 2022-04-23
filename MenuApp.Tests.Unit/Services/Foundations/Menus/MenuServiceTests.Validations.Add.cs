@@ -57,7 +57,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
 
             invalidMenuException.AddData(
                key: nameof(Menu.ItemName),
-               values: "Item is required.");
+               values: "ItemName is required.");
 
             invalidMenuException.AddData(
                key: nameof(Menu.Price),

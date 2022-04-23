@@ -22,6 +22,10 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
             {
                 throw CreateAndLogValidationException(nullMenuException);
             }
+            catch (InvalidMenuException invalidMenuException)
+            {
+                throw CreateAndLogValidationException(invalidMenuException);
+            }
         }
 
         private MenuValidationException CreateAndLogValidationException(Xeption exception)

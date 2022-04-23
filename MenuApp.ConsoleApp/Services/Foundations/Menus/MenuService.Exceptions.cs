@@ -26,6 +26,13 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
             {
                 throw CreateAndLogValidationException(invalidMenuException);
             }
+            catch (Exception exception)
+            {
+                var failedMenuServiceException =
+                    new FailedMenuServiceException(exception);
+
+                throw CreateAndLogServiceException(failedMenuServiceException);
+            }
         }
 
         private MenuValidationException CreateAndLogValidationException(Xeption exception)
@@ -34,6 +41,14 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
             this.loggingBroker.LogError(menuValidationException);
 
             return menuValidationException;
+        }
+
+        private MenuServiceException CreateAndLogServiceException(Xeption exception)
+        {
+            var menuServiceException = new MenuServiceException(exception);
+            this.loggingBroker.LogError(menuServiceException);
+
+            return menuServiceException;
         }
     }
 }

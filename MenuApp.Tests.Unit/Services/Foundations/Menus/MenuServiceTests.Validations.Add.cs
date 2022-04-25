@@ -1,4 +1,8 @@
-﻿using MenuApp.ConsoleApp.Models.Menus;
+﻿// ------------------------------------------------
+// Copyright (c) MumsWhoCode. All rights reserved.
+// ------------------------------------------------
+
+using MenuApp.ConsoleApp.Models.Menus;
 using MenuApp.ConsoleApp.Models.Menus.Exceptions;
 using Moq;
 using Xunit;
@@ -26,7 +30,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
             this.loggingBrokerMock.Verify(broker =>
                 broker.LogError(It.Is(SameExceptionAs(
                     expectedMenuValidationException))),
-                    Times.Once);
+                        Times.Once);
 
             this.storageBrokerMock.Verify(broker =>
                 broker.InsertMenu(It.IsAny<Menu>()),
@@ -44,7 +48,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
             string invalidText)
         {
             //given
-            Menu invalidMenu = new Menu
+            var invalidMenu = new Menu
             {
                 ItemName = invalidText
             };
@@ -75,7 +79,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
             this.loggingBrokerMock.Verify(broker =>
                 broker.LogError(It.Is(SameExceptionAs(
                     expectedMenuValidationException))),
-                    Times.Once);
+                        Times.Once);
 
             this.storageBrokerMock.Verify(broker =>
                 broker.InsertMenu(It.IsAny<Menu>()),

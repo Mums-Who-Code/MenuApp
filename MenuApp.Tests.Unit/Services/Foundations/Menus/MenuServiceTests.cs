@@ -1,4 +1,8 @@
-﻿using System.Linq.Expressions;
+﻿// ------------------------------------------------
+// Copyright (c) MumsWhoCode. All rights reserved.
+// ------------------------------------------------
+
+using System.Linq.Expressions;
 using MenuApp.ConsoleApp.Brokers.Loggings;
 using MenuApp.ConsoleApp.Brokers.Storages;
 using MenuApp.ConsoleApp.Models.Menus;

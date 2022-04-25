@@ -9,7 +9,7 @@ namespace MenuApp.ConsoleApp.Models.Menus.Exceptions
     public class FailedMenuServiceException : Xeption
     {
         public FailedMenuServiceException(Exception innerException)
-            : base(message: "Failed Menu service error occurred, please contact support.",
+            : base(message: "Failed menu service error occurred, please contact support.",
                   innerException)
         { }
     }

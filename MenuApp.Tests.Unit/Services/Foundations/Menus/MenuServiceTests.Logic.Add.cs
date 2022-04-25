@@ -1,4 +1,8 @@
-﻿using FluentAssertions;
+﻿// ------------------------------------------------
+// Copyright (c) MumsWhoCode. All rights reserved.
+// ------------------------------------------------
+
+using FluentAssertions;
 using Force.DeepCloner;
 using MenuApp.ConsoleApp.Models.Menus;
 using Moq;

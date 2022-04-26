@@ -12,7 +12,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
     public partial class MenuServiceTests
     {
         [Fact]
-        public async Task ShouldThrowValidationExceptionOnAddIfMenuIsNullAndLogIt()
+        public void ShouldThrowValidationExceptionOnAddIfMenuIsNullAndLogIt()
         {
             //given
             Menu nullMenu = null;
@@ -44,7 +44,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
         [InlineData(null)]
         [InlineData("")]
         [InlineData("   ")]
-        public async Task ShouldThrowValidationExceptionOnAddIfMenuIsInvalidAndLogIt(
+        public void ShouldThrowValidationExceptionOnAddIfMenuIsInvalidAndLogIt(
             string invalidText)
         {
             //given

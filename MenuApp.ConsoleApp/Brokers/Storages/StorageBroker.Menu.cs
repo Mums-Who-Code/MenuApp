@@ -6,7 +6,7 @@ using MenuApp.ConsoleApp.Models.Menus;
 
 namespace MenuApp.ConsoleApp.Brokers.Storages
 {
-    internal partial class StorageBroker : IStorageBroker
+    public partial class StorageBroker : IStorageBroker
     {
         List<Menu> Menus = new List<Menu>();
 

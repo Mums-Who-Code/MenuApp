@@ -4,7 +4,7 @@
 
 namespace MenuApp.ConsoleApp.Models.Menus
 {
-    internal class Menu
+    public class Menu
     {
         public int Id { get; set; }
         public string ItemName { get; set; }

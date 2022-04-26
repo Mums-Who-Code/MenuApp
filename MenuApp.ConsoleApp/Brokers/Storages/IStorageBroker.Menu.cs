@@ -6,7 +6,7 @@ using MenuApp.ConsoleApp.Models.Menus;
 
 namespace MenuApp.ConsoleApp.Brokers.Storages
 {
-    internal partial interface IStorageBroker
+    public partial interface IStorageBroker
     {
         Menu InsertMenu(Menu menu);
     }

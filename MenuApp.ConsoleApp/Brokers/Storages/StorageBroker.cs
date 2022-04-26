@@ -4,7 +4,7 @@
 
 namespace MenuApp.ConsoleApp.Brokers.Storages
 {
-    internal partial class StorageBroker : IStorageBroker
+    public partial class StorageBroker : IStorageBroker
     {
     }
 }

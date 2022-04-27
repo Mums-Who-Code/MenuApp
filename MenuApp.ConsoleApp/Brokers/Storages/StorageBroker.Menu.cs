@@ -16,5 +16,7 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
 
             return menu;
         }
+
+        public List<Menu> SelectAllMenus() => Menus;
     }
 }

@@ -9,5 +9,6 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
     public partial interface IStorageBroker
     {
         Menu InsertMenu(Menu menu);
+        List<Menu> SelectAllMenus();
     }
 }

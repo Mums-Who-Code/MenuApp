@@ -30,6 +30,9 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public List<Menu> RetrieveAllMenus() =>
-            this.storageBroker.SelectAllMenus();
+        TryCatch(() =>
+        {
+            return this.storageBroker.SelectAllMenus();
+        });
     }
 }

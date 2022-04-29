@@ -11,6 +11,7 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
     public partial class MenuService
     {
         private delegate Menu ReturningMenuFunction();
+        private delegate List<Menu> ReturningMenusFunction();
 
         private Menu TryCatch(ReturningMenuFunction returningMenuFunction)
         {
@@ -32,6 +33,22 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
                     new FailedMenuServiceException(exception);
 
                 throw CreateAndLogServiceException(failedMenuServiceException);
+            }
+        }
+
+        private List<Menu> TryCatch(ReturningMenusFunction returningMenusFunction)
+        {
+            try
+            {
+                return returningMenusFunction();
+            }
+            catch (Exception exception)
+            {
+                var failedMenuServiceException =
+                    new FailedMenuServiceException(exception);
+
+                throw CreateAndLogServiceException(
+                    failedMenuServiceException);
             }
         }
 

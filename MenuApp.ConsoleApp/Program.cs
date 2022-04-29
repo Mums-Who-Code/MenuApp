@@ -28,6 +28,16 @@ namespace MenuApp.ConsoleApp
             };
 
             menuService.AddMenu(inputMenu);
+
+            inputMenu = new Menu()
+            {
+                Id = 103456,
+                ItemName = "Butter Chicken",
+                Price = 50.00
+            };
+
+            menuService.AddMenu(inputMenu);
+            List<Menu> storedSamples = menuService.RetrieveAllMenus();
         }
     }
 }

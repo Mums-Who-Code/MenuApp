@@ -10,5 +10,7 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
     {
         Menu InsertMenu(Menu menu);
         List<Menu> SelectAllMenus();
+
+        Menu SelectMenuById(int id);
     }
 }

@@ -18,5 +18,8 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
         }
 
         public List<Menu> SelectAllMenus() => Menus;
+
+        public Menu SelectMenuById(int id) =>
+            Menus.Find(menu => menu.Id == id);
     }
 }

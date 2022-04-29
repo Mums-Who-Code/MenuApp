@@ -1,4 +1,8 @@
-﻿using MenuApp.ConsoleApp.Models.Menus.Exceptions;
+﻿// ------------------------------------------------
+// Copyright (c) MumsWhoCode. All rights reserved.
+// ------------------------------------------------
+
+using MenuApp.ConsoleApp.Models.Menus.Exceptions;
 using Moq;
 using Xunit;
 

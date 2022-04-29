@@ -28,5 +28,11 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
 
             return this.storageBroker.InsertMenu(menu);
         });
+
+        public List<Menu> RetrieveAllMenus() =>
+        TryCatch(() =>
+        {
+            return this.storageBroker.SelectAllMenus();
+        });
     }
 }

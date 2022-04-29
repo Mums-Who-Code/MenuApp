@@ -9,5 +9,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
     public interface IMenuService
     {
         Menu AddMenu(Menu menu);
+        List<Menu> RetrieveAllMenus();
     }
 }

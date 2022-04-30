@@ -35,7 +35,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
 
             this.storageBrokerMock.Verify(broker =>
                 broker.SelectMenuById(It.IsAny<int>()),
-                    Times.Once);
+                    Times.Never);
         }
     }
 }

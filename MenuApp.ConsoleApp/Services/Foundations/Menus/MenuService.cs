@@ -36,6 +36,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public Menu RetrieveMenuById(int id) =>
-            throw new NotImplementedException();
+            this.storageBroker.SelectMenuById(id);
     }
 }

@@ -19,6 +19,9 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
                 (Rule: IsInvalid(menu.Price), Parameter: nameof(Menu.Price)));
         }
 
+        private static void ValidateInputId(int id) =>
+            Validate((Rule: IsInvalid(id), Parameter: nameof(Menu.Id)));
+
         private static dynamic IsInvalid(int id) => new
         {
             Condition = id == default,

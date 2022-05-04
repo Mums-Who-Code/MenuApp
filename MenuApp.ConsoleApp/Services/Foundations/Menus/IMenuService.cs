@@ -10,5 +10,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
     {
         Menu AddMenu(Menu menu);
         List<Menu> RetrieveAllMenus();
+        Menu RetrieveMenuById(int id);
     }
 }

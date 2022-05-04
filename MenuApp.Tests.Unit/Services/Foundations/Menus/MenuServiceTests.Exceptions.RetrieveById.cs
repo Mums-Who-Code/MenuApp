@@ -24,6 +24,10 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
                 new MenuDepecdencyValidationException(
                     nullArgumentMenuException);
 
+            this.storageBrokerMock.Setup(broker =>
+                broker.SelectMenuById(It.IsAny<int>()))
+                    .Throws(argumentNullException);
+
             //when
             Action retrieveMenuByIdAction = () =>
                 this.menuService.RetrieveMenuById(someMenuId);

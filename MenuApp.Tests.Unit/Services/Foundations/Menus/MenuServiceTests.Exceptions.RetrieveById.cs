@@ -21,7 +21,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
                 new NullArgumentMenuException(argumentNullException);
 
             var expectedMenuDependencyValidationException =
-                new MenuDepecdencyValidationException(
+                new MenuDependencyValidationException(
                     nullArgumentMenuException);
 
             this.storageBrokerMock.Setup(broker =>
@@ -33,7 +33,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
                 this.menuService.RetrieveMenuById(someMenuId);
 
             //then
-            Assert.Throws<MenuDepecdencyValidationException>(retrieveMenuByIdAction);
+            Assert.Throws<MenuDependencyValidationException>(retrieveMenuByIdAction);
 
             this.storageBrokerMock.Verify(broker =>
                 broker.SelectMenuById(It.IsAny<int>()),

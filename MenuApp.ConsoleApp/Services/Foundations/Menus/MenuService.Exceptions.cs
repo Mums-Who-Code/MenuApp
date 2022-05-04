@@ -68,12 +68,12 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
             return menuValidationException;
         }
 
-        private MenuDepecdencyValidationException CreateAndLogDependencyValidationException(Xeption exception)
+        private MenuDependencyValidationException CreateAndLogDependencyValidationException(Xeption exception)
         {
-            var menuDepecdencyValidationException = new MenuDepecdencyValidationException(exception);
-            this.loggingBroker.LogError(menuDepecdencyValidationException);
+            var menuDependencyValidationException = new MenuDependencyValidationException(exception);
+            this.loggingBroker.LogError(menuDependencyValidationException);
 
-            return menuDepecdencyValidationException;
+            return menuDependencyValidationException;
         }
 
         private MenuServiceException CreateAndLogServiceException(Xeption exception)

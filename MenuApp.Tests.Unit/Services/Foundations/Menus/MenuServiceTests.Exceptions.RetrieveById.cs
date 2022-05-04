@@ -47,5 +47,42 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
             this.storageBrokerMock.VerifyNoOtherCalls();
             this.loggingBrokerMock.VerifyNoOtherCalls();
         }
+
+        [Fact]
+        public void ShouldThrowServiceExceptionOnRetrieveByIdIfServiceErrorOccursAndLogIt()
+        {
+            //given
+            int someMenuId = GetRandomNumber();
+            var serviceException = new Exception();
+
+            var failedMenuServiceException =
+                new FailedMenuServiceException(serviceException);
+
+            var expectedMenuServiceException =
+                new MenuServiceException(failedMenuServiceException);
+
+            this.storageBrokerMock.Setup(broker =>
+                broker.SelectMenuById(It.IsAny<int>()))
+                    .Throws(serviceException);
+
+            //when
+            Action retrieveMenuByIdAction = () =>
+                this.menuService.RetrieveMenuById(someMenuId);
+
+            //then
+            Assert.Throws<MenuServiceException>(retrieveMenuByIdAction);
+
+            this.storageBrokerMock.Verify(broker =>
+                broker.SelectMenuById(It.IsAny<int>()),
+                    Times.Once);
+
+            this.loggingBrokerMock.Verify(broker =>
+                broker.LogError(It.Is(SameExceptionAs(
+                    expectedMenuServiceException))),
+                        Times.Once);
+
+            this.storageBrokerMock.VerifyNoOtherCalls();
+            this.loggingBrokerMock.VerifyNoOtherCalls();
+        }
     }
 }

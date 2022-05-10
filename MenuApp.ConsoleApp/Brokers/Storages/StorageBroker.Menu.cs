@@ -21,5 +21,13 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
 
         public Menu SelectMenuById(int id) =>
             Menus.Find(menu => menu.Id == id);
+
+        public Menu UpdateMenu(Menu inputMenu)
+        {
+            Menus.RemoveAll(menu => menu.Id == inputMenu.Id);
+            Menus.Add(inputMenu);
+
+            return inputMenu;
+        }
     }
 }

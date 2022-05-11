@@ -44,6 +44,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public Menu ModifyMenu(Menu menu) =>
-            throw new System.NotImplementedException();
+            this.storageBroker.UpdateMenu(menu);
     }
 }

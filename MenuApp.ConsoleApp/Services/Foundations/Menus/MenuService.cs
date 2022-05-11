@@ -46,7 +46,7 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         public Menu ModifyMenu(Menu menu) =>
         TryCatch(() =>
         {
-            ValidateMenuIsNotNull(menu);
+            ValidateMenu(menu);
 
             return this.storageBroker.UpdateMenu(menu);
         });

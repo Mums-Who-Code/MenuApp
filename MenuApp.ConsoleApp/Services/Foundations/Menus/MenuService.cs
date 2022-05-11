@@ -44,6 +44,11 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public Menu ModifyMenu(Menu menu) =>
-            this.storageBroker.UpdateMenu(menu);
+        TryCatch(() =>
+        {
+            ValidateMenuIsNotNull(menu);
+
+            return this.storageBroker.UpdateMenu(menu);
+        });
     }
 }

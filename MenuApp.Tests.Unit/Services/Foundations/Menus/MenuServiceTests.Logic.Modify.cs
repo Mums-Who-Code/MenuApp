@@ -22,7 +22,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
 
             this.storageBrokerMock.Setup(broker =>
                 broker.UpdateMenu(inputMenu))
-                    .Returns(epectedMenu);
+                    .Returns(modifiedMenu);
 
             //when
             Menu actualMenu = this.menuService.ModifyMenu(inputMenu);

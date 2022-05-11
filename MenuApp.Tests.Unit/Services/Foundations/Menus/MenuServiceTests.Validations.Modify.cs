@@ -8,7 +8,7 @@ namespace MenuApp.Tests.Unit.Services.Foundations.Menus
     public partial class MenuServiceTests
     {
         [Fact]
-        public void ShouldThrowValidationExceptionOnModifyIfSampleIsNullAndLogIt()
+        public void ShouldThrowValidationExceptionOnModifyIfMenuIsNullAndLogIt()
         {
             //given
             Menu nullMenu = null;

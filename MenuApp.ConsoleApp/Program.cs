@@ -39,6 +39,15 @@ namespace MenuApp.ConsoleApp
             menuService.AddMenu(inputMenu);
             List<Menu> storedSamples = menuService.RetrieveAllMenus();
             Menu returningMenu = menuService.RetrieveMenuById(10);
+
+            inputMenu = new Menu()
+            {
+                Id = 10,
+                ItemName = "Lemon Rice",
+                Price = 22.00
+            };
+
+            Menu modifiedMenu = menuService.ModifyMenu(inputMenu);
         }
     }
 }

@@ -48,6 +48,15 @@ namespace MenuApp.ConsoleApp
             };
 
             Menu modifiedMenu = menuService.ModifyMenu(inputMenu);
+
+            inputMenu = new Menu()
+            {
+                Id = 0,
+                ItemName = "Record to be deleted",
+                Price = 22.00
+            };
+
+            Menu deletedMenu = menuService.RemoveMenu(inputMenu);
         }
     }
 }

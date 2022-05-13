@@ -52,6 +52,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public Menu RemoveMenu(Menu menu) =>
-            throw new System.NotImplementedException();
+            this.storageBroker.DeleteMenu(menu);
     }
 }

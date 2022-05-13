@@ -12,5 +12,6 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
         List<Menu> SelectAllMenus();
         Menu SelectMenuById(int id);
         Menu UpdateMenu(Menu menu);
+        Menu DeleteMenu(Menu menu);
     }
 }

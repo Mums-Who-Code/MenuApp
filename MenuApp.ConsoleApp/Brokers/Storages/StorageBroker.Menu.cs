@@ -29,5 +29,12 @@ namespace MenuApp.ConsoleApp.Brokers.Storages
 
             return inputMenu;
         }
+
+        public Menu DeleteMenu(Menu inputMenu)
+        {
+            Menus.Remove(inputMenu);
+
+            return inputMenu;
+        }
     }
 }

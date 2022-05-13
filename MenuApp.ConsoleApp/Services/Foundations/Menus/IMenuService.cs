@@ -12,5 +12,6 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         List<Menu> RetrieveAllMenus();
         Menu RetrieveMenuById(int id);
         Menu ModifyMenu(Menu menu);
+        Menu RemoveMenu(Menu menu);
     }
 }

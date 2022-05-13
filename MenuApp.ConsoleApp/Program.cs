@@ -37,7 +37,7 @@ namespace MenuApp.ConsoleApp
             };
 
             menuService.AddMenu(inputMenu);
-            List<Menu> storedSamples = menuService.RetrieveAllMenus();
+            List<Menu> storedMenus = menuService.RetrieveAllMenus();
             Menu returningMenu = menuService.RetrieveMenuById(10);
 
             inputMenu = new Menu()

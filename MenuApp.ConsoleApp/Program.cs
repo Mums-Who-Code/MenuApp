@@ -44,7 +44,7 @@ namespace MenuApp.ConsoleApp
             {
                 Id = 10,
                 ItemName = "Lemon Rice",
-                Price = 20.00
+                Price = 22.00
             };
 
             Menu modifiedMenu = menuService.ModifyMenu(inputMenu);

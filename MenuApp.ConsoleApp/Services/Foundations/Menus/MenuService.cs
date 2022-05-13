@@ -52,6 +52,11 @@ namespace MenuApp.ConsoleApp.Services.Foundations.Menus
         });
 
         public Menu RemoveMenu(Menu menu) =>
-            this.storageBroker.DeleteMenu(menu);
+        TryCatch(() =>
+        {
+            ValidateMenuIsNotNull(menu);
+
+            return this.storageBroker.DeleteMenu(menu);
+        });
     }
 }
